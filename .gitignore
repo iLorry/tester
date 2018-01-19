@@ -1,0 +1,13 @@
+*.*~
+*.env
+*.rej
+*.swo
+*.swp
+*.~$lock
+.#*
+
+log/
+runtime/
+__pycache__/
+*.py[cod]
+*$py.class

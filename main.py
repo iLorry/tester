@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
 import time
 
 
@@ -26,10 +27,11 @@ def hi(content):
 
 def main():
     now = time.strftime('%Y-%m-%dT%H:%M:%S', time.localtime(time.time()))
+    content = '{} {}'.format(now, sys.argv[1])
     runtime = './runtime/'
 
     mkdir(runtime)
-    output(runtime + 'tester.log', now)
+    output(runtime + 'tester.log', content)
 
 
 if __name__ == '__main__':

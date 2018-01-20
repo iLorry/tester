@@ -3,6 +3,7 @@
 import main
 import unittest2 as unittest
 
+# pip install unittest2
 
 class Case(unittest.TestCase):
     @classmethod
@@ -13,8 +14,9 @@ class Case(unittest.TestCase):
         pass
 
     def test_hi(self):
-        content = 'hi'
-        self.assertEqual(main.hi(content), content, 'test [hi] fail!')
+        content = 'ping'
+        expected = 'pong'
+        self.assertEqual(main.hi(content), expected, 'test [hi] fail!')
 
 
 if __name__ == '__main__':

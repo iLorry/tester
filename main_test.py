@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import main
+import os
 import unittest2 as unittest
 
 # pip install unittest2
@@ -15,6 +16,22 @@ class Case(unittest.TestCase):
 
     def tearDown(self):
         pass
+
+    def test_mkdir_true(self):
+        target = './runtime/test_mkdir/'
+        expected = True
+        if os.path.exists(target):
+            os.removedirs(target)
+        self.assertEqual(
+            main.mkdir(target), expected, 'test [mkdir_true] fail!')
+
+    def test_mkdir_false(self):
+        target = './runtime/test_mkdir/'
+        expected = False
+        if not os.path.exists(target):
+            os.makedirs(target)
+        self.assertEqual(
+            main.mkdir(target), expected, 'test [mkdir_false] fail!')
 
     def test_hi(self):
         content = 'ping'

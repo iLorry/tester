@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
 
-import main
+import sys
+sys.path.append('..')
+
 import os
 import unittest2 as unittest
+from tester import main
 
 # pip install unittest2
 # pip install xmlrunner
 # pip install unittest-xml-reporting
-
+# pip install nose
 
 class Case(unittest.TestCase):
     @classmethod

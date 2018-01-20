@@ -8,7 +8,8 @@ import time
 def mkdir(target):
     target = (target.strip()).rstrip('\\')
     if not os.path.exists(target):
-        return os.makedirs(target)
+        os.makedirs(target)
+        return True
     else:
         return False
 

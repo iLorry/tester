@@ -5,10 +5,12 @@
 *.swp
 *.~$lock
 .#*
-Jenkinsfile~
 
 log/
 runtime/
 __pycache__/
 *.py[cod]
 *$py.class
+
+Jenkinsfile~
+nosetests.xml

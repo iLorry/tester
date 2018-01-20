@@ -7,7 +7,7 @@ import unittest2 as unittest
 # pip install unittest2
 # pip install xmlrunner
 # pip install unittest-xml-reporting
-
+# pip install nose
 
 class Case(unittest.TestCase):
     @classmethod

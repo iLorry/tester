@@ -4,6 +4,9 @@ import main
 import unittest2 as unittest
 
 # pip install unittest2
+# pip install xmlrunner
+# pip install unittest-xml-reporting
+
 
 class Case(unittest.TestCase):
     @classmethod
@@ -20,6 +23,19 @@ class Case(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main(module=__name__, buffer=True, verbosity=2, exit=False)
+    runtime = './runtime/'
+    main.mkdir(runtime)
+
+    import xmlrunner
+
+    #unittest.main(module=__name__, buffer=True, verbosity=2, exit=False)
+
+    with open(runtime + 'test-results.xml', 'wb') as output:
+        unittest.main(
+            testRunner=xmlrunner.XMLTestRunner(output=output),
+            module=__name__,
+            buffer=True,
+            verbosity=2,
+            exit=False)
 
 # vim: noai:ts=4:sw=4

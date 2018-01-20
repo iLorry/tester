@@ -1,20 +1,22 @@
-Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent any
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
                 bat 'echo Building...'
+                bat 'python main.py Building...'
             }
         }
         stage('Test') {
             steps {
                 bat 'echo Testing...'
+                bat 'python main.py Testing...'
             }
         }
         stage('Deploy') {
             steps {
                 bat 'echo Deploying...'
+                bat 'python main.py Deploying...'
             }
         }
     }

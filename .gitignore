@@ -5,6 +5,7 @@
 *.swp
 *.~$lock
 .#*
+Jenkinsfile~
 
 log/
 runtime/

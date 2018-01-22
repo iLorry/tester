@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import sys
-sys.path.append('..')
-
 import os
 import unittest2 as unittest
 import main
@@ -11,6 +8,8 @@ import main
 # pip install xmlrunner
 # pip install unittest-xml-reporting
 # pip install nose
+
+runtime = './runtime/'
 
 
 class Case(unittest.TestCase):
@@ -22,7 +21,7 @@ class Case(unittest.TestCase):
         pass
 
     def test_mkdir_true(self):
-        target = '../runtime/test_mkdir/'
+        target = runtime + 'test_mkdir/'
         expected = True
         if os.path.exists(target):
             os.removedirs(target)
@@ -30,7 +29,7 @@ class Case(unittest.TestCase):
             main.mkdir(target), expected, 'test [mkdir_true] fail!')
 
     def test_mkdir_false(self):
-        target = '../runtime/test_mkdir/'
+        target = runtime + 'test_mkdir/'
         expected = False
         if not os.path.exists(target):
             os.makedirs(target)
@@ -44,7 +43,6 @@ class Case(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    runtime = '../runtime/'
     main.mkdir(runtime)
 
     import xmlrunner

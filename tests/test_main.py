@@ -5,7 +5,7 @@ sys.path.append('..')
 
 import os
 import unittest2 as unittest
-from tester import main
+import main
 
 # pip install unittest2
 # pip install xmlrunner
@@ -22,7 +22,7 @@ class Case(unittest.TestCase):
         pass
 
     def test_mkdir_true(self):
-        target = './runtime/test_mkdir/'
+        target = '../runtime/test_mkdir/'
         expected = True
         if os.path.exists(target):
             os.removedirs(target)
@@ -30,7 +30,7 @@ class Case(unittest.TestCase):
             main.mkdir(target), expected, 'test [mkdir_true] fail!')
 
     def test_mkdir_false(self):
-        target = './runtime/test_mkdir/'
+        target = '../runtime/test_mkdir/'
         expected = False
         if not os.path.exists(target):
             os.makedirs(target)
@@ -44,7 +44,7 @@ class Case(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    runtime = './runtime/'
+    runtime = '../runtime/'
     main.mkdir(runtime)
 
     import xmlrunner

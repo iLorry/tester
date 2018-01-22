@@ -11,7 +11,6 @@ pipeline {
             steps {
                 bat 'echo Testing...'
                 bat 'python main.py Testing...'
-                bat 'cd tests/'
                 bat 'python test_main.py'
             }
         }

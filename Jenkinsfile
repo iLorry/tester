@@ -14,7 +14,7 @@ pipeline {
                 bat 'echo Testing...'
                 bat 'pipenv install'
                 bat 'pipenv run python src/main.py Testing...'
-                bat 'pipenv run python src/test_main.py'
+                bat 'python src/test_main.py'
             }
         }
         stage('Deploy') {

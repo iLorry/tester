@@ -1,4 +1,2 @@
 Tester
 ------
-
-> test content

@@ -3,21 +3,21 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'echo Building.'
-                bat 'python main.py Building.'
+                bat 'echo Building...'
+                bat 'pipenv run python src/main.py Building...'
             }
         }
         stage('Test') {
             steps {
-                bat 'echo Testing.'
-                bat 'python main.py Testing.'
-                bat 'python test_main.py'
+                bat 'echo Testing...'
+                bat 'pipenv run python src/main.py Testing...'
+                bat 'pipenv run python src/test_main.py'
             }
         }
         stage('Deploy') {
             steps {
-                bat 'echo Deploying.'
-                bat 'python main.py Deploying.'
+                bat 'echo Deploying...'
+                bat 'pipenv run python src/main.py Deploying...'
             }
         }
     }

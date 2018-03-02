@@ -4,6 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 bat 'echo Building...'
+                bat 'pipenv install'
                 bat 'pipenv run python src/main.py Building...'
                 bat 'sonar-scanner.bat'
             }
@@ -11,6 +12,7 @@ pipeline {
         stage('Test') {
             steps {
                 bat 'echo Testing...'
+                bat 'pipenv install'
                 bat 'pipenv run python src/main.py Testing...'
                 bat 'pipenv run python src/test_main.py'
             }
@@ -18,6 +20,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 bat 'echo Deploying...'
+                bat 'pipenv install'
                 bat 'pipenv run python src/main.py Deploying...'
             }
         }

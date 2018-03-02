@@ -5,6 +5,7 @@ pipeline {
             steps {
                 bat 'echo Building...'
                 bat 'pipenv run python src/main.py Building...'
+                bat 'sonar-scanner.bat'
             }
         }
         stage('Test') {
